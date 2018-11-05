@@ -136,10 +136,10 @@ class AlexNet(nn.Module):
         # Custom weights initialization
         for m in self.modules():
             if isinstance(m, nn.Conv2d):
-                m.weight = nn.init.xavier_uniform(m.weight, gain=1)
+                m.weight = nn.init.xavier_uniform_(m.weight, gain=1)
             elif isinstance(m, nn.Linear):
                 # FC layers have weights initialized with Glorot uniform initialization
-                m.weight = nn.init.xavier_uniform(m.weight, gain=1)
+                m.weight = nn.init.xavier_uniform_(m.weight, gain=1)
 
     def forward(self, x):
         
